@@ -1,0 +1,275 @@
+<body class="sub_page">
+    <div class="hero_area">
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+            <a class="navbar-brand mr-5" href="index.html">
+              <img src="../assets/images/pay3.png" alt="">
+              <span style="color: red;">
+                Propay
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav  ">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLink="/about"> About </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/admin">Admin </a>
+                      </li>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLink="/CustomerSupport"> CustomerSupport </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLink="/Customer"> Customer </a>
+                    </li>
+                   
+                  </ul>
+                <!-- <form class="form-inline">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form> -->
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- end header section -->
+    </div>
+
+<!-- Credit card form -->
+
+  <!DOCTYPE html>
+
+<html lang="en">
+
+ 
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Payment Form - Sagar Developer</title>
+
+    <link rel="stylesheet" href="">
+
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+</head>
+
+ 
+<div class="color">
+<body>
+ 
+    <div class="wrapper">
+
+        <h2>Payment Form</h2>
+
+        <form action="" method="post">
+
+            <!--Account Information Start-->
+
+            <h4>Account</h4>
+
+            <div class="input_group">
+
+                <div class="input_box">
+
+                    <input type="text" placeholder="Full Name" required class="name">
+
+                    <i class="fa fa-user icon"></i>
+
+                </div>
+
+                <div class="input_box">
+
+                    <input type="text" placeholder="Name on Card" required class="name">
+
+                    <i class="fa fa-user icon"></i>
+
+                </div>
+
+            </div>
+
+            <div class="input_group">
+
+                <div class="input_box">
+
+                    <input type="email" placeholder="Email Address" required class="name">
+
+                    <i class="fa fa-envelope icon"></i>
+
+                </div>
+
+            </div>
+
+          
+
+            
+
+            <!--Account Information End-->
+
+ 
+
+ 
+
+            <!--DOB & Gender Start-->
+
+            <div class="input_group">
+
+                <div class="input_box">
+
+                    <h4>Date Of Birth</h4>
+                    <input type="date" placeholder="dob" size="100px">
+
+                    <!-- <input type="text" placeholder="DD" required class="dob">
+
+                    <input type="text" placeholder="MM" required class="dob">
+
+                    <input type="text" placeholder="YYYY" required class="dob"> -->
+               
+                </div>
+
+                <div class="input_box">
+
+                    <h4>Gender</h4>
+
+                    <input type="radio" name="gender" class="radio" id="b1" checked>
+
+                    <label for="b1">Male</label>
+
+                    <input type="radio" name="gender" class="radio" id="b2">
+
+                    <label for="b2">Female</label>
+
+                </div>
+
+            </div>
+
+            <!--DOB & Gender End-->
+
+ 
+
+ 
+
+            <!--Payment Details Start-->
+
+            <div class="input_group">
+
+                <div class="input_box">
+
+                    <h4>Payment Details</h4>
+
+                    <input type="radio" name="pay" class="radio" id="bc1" checked>
+
+                    <label for="bc1"><span>
+
+                            <i class="fa fa-cc-visa"></i>Credit Card</span></label>
+
+                    <input type="radio" name="pay" class="radio" id="bc2">
+
+                    <label for="bc2"><span>
+
+                            <i class="fa fa-cc-paypal"></i>DebitCard</span></label>
+
+                </div>
+
+            </div>
+
+            <div class="input_group">
+
+                <div class="input_box">
+
+                    <input type="tel" name="" class="name" placeholder="Card Number 1111-2222-3333-4444" required>
+
+                    <i class="fa fa-credit-card icon"></i>
+
+                </div>
+
+            </div>
+
+            <div class="input_group">
+
+                <div class="input_box">
+
+                    <input type="tel" name="" class="name" placeholder="Card CVC 632" required>
+
+                    <i class="fa fa-user icon"></i>
+
+                </div>
+
+            </div>
+
+            <div class="input_group">
+
+                <div class="input_box">
+
+                    <div class="input_box">
+
+                        <input type="month" placeholder="Exp Month" required class="name">
+
+                        <i class="fa fa-calendar icon" aria-hidden="true"></i>
+
+                    </div>
+
+                </div>
+
+                <!-- <div class="input_box">
+
+                    <input type="year" placeholder="Exp Year" required class="name">
+
+                    <i class="fa fa-calendar-o icon" aria-hidden="true"></i>
+
+                </div> -->
+
+            </div>
+
+            <!-- <div class="input_box">
+
+                <input type="number" placeholder="Enter Amount" required class="name">
+
+                <i class="fa fa-money icon" aria-hidden="true"></i>
+
+            </div> -->
+
+            <!--Payment Details End-->
+
+ 
+
+            <div class="input_group">
+
+                <div class="input_box">
+
+                    <button type="submit">PAY NOW </button>
+
+                </div>
+
+            </div>
+
+ 
+
+        </form>
+
+    </div>
+
+ 
+  
+</body>
+</div>
+<!-- </div> -->
+
+</html>
+
+        
