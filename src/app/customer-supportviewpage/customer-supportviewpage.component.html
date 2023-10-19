@@ -63,21 +63,32 @@
     <th>phone</th>
     <th>email</th>
     <th>duedate</th>
-    <th>outstandingbalance</th>
+    
     <th>status</th>
     <th>days</th>
-    <th>Notification</th>
+    <th>currentbal</th>
+    <th>previousbal</th>
+    
+    <th>outbalance</th>
+    <th>Notify</th>
+
 </thead>
 <tbody>
   <tr *ngFor  ="let customer of pendingcustomer">
-    <td>{{customer.customer_id}}</td>
+    <td>{{customer.id}}</td>
     <td>{{customer.name}}</td>
     <td>{{customer.mobile}}</td>
     <td>{{customer.email}}</td>
     <td>{{customer.duedate}}</td>
-    <td>{{customer.outbalance}}</td>
     <td>{{customer.status}}</td>
+   
+   
     <td>{{customer.days}}</td>
+    <td>{{customer.currentbalance}}</td>
+    <td>{{customer.previousbalance}}</td>
+    <td>{{customer.outbalance}}</td>
+   
+
     <td><button (click)="sendEmail(customer)">Send Email</button></td>
   </tr>
 </tbody>

@@ -77,11 +77,9 @@
 
         <h2>Payment Form</h2>
 
-        <form action="" method="post">
+        <form action="" method="post" class="was-validated"  #payform="ngForm">
 
-            <!--Account Information Start-->
-
-            <h4>Account</h4>
+          <h4>Account</h4>
 
             <div class="input_group">
 
@@ -103,29 +101,6 @@
 
             </div>
 
-            <div class="input_group">
-
-                <div class="input_box">
-
-                    <input type="email" placeholder="Email Address" required class="name">
-
-                    <i class="fa fa-envelope icon"></i>
-
-                </div>
-
-            </div>
-
-          
-
-            
-
-            <!--Account Information End-->
-
- 
-
- 
-
-            <!--DOB & Gender Start-->
 
             <div class="input_group">
 
@@ -133,12 +108,7 @@
 
                     <h4>Date Of Birth</h4>
                     <input type="date" placeholder="dob" size="100px">
-
-                    <!-- <input type="text" placeholder="DD" required class="dob">
-
-                    <input type="text" placeholder="MM" required class="dob">
-
-                    <input type="text" placeholder="YYYY" required class="dob"> -->
+   
                
                 </div>
 
@@ -158,13 +128,7 @@
 
             </div>
 
-            <!--DOB & Gender End-->
-
- 
-
- 
-
-            <!--Payment Details Start-->
+            
 
             <div class="input_group">
 
@@ -189,28 +153,19 @@
             </div>
 
             <div class="input_group">
-
-                <div class="input_box">
-
-                    <input type="tel" name="" class="name" placeholder="Card Number 1111-2222-3333-4444" required>
-
-                    <i class="fa fa-credit-card icon"></i>
-
-                </div>
-
-            </div>
+              <div class="input_box">
+               <h4>Cardnumber</h4> <input    type="text"    id="cardNumber"    name="cardNumber"    placeholder="Enter 12 digit number"    pattern="^\d{16}$"    [(ngModel)]="cardNumber"    required    #cardNumberInput="ngModel"    [ngClass]="{'invalid': cardNumberInput.invalid && cardNumberInput.touched}" >
+                 <div *ngIf="cardNumberInput.invalid && cardNumberInput.touched" class="error-message">    Invalid Card Number   </div>
+          </div>
+          </div>
 
             <div class="input_group">
-
-                <div class="input_box">
-
-                    <input type="tel" name="" class="name" placeholder="Card CVC 632" required>
-
-                    <i class="fa fa-user icon"></i>
-
-                </div>
-
-            </div>
+              <div class="input_box">
+               <h4>CVV</h4><input    type="text"    id="cvv"    name="cvv"    placeholder="123"    pattern="^\d{3,4}$"    [(ngModel)]="cvv"    required    #cvvInput="ngModel"    [ngClass]="{'invalid': cvvInput.invalid && cvvInput.touched}" > 
+                   <div *ngIf="cvvInput.invalid && cvvInput.touched" class="error-message">    Invalid CVV   </div>
+              </div>
+             
+          </div>
 
             <div class="input_group">
 
@@ -226,25 +181,11 @@
 
                 </div>
 
-                <!-- <div class="input_box">
-
-                    <input type="year" placeholder="Exp Year" required class="name">
-
-                    <i class="fa fa-calendar-o icon" aria-hidden="true"></i>
-
-                </div> -->
+               
 
             </div>
 
-            <!-- <div class="input_box">
-
-                <input type="number" placeholder="Enter Amount" required class="name">
-
-                <i class="fa fa-money icon" aria-hidden="true"></i>
-
-            </div> -->
-
-            <!--Payment Details End-->
+          
 
  
 
@@ -252,14 +193,19 @@
 
                 <div class="input_box">
 
-                    <button type="submit">PAY NOW </button>
+                    <button  
+
+                    [disabled]="payform.form.invalid" (click)="onSubmit()" routerLink="/paymentsucces"  >PAY NOW {{condition}} </button>
 
                 </div>
 
             </div>
+            <div class="input_group">
 
- 
-
+              <div class="input_box">
+<p style="text-align: center;">or</p>
+ <button routerLink="/paymentupi">pay using upi {{condition}}</button>
+              </div></div>
         </form>
 
     </div>

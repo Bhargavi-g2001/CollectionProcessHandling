@@ -47,36 +47,68 @@ export class CustomerComponent {
 //   }
 // }
 private baseUrl='http://localhost:1219';
-generateOTP(frm:any) {
-      // Extract the phone number from the form
-      console.log(frm.value.phone)
+// generateOTP(frm:any) {
+//       // Extract the phone number from the form
+//       console.log(frm.value.phone)
 
-      const otpRequest: OtpRequest = { 
-        username: this.phoneNumber,
-        phoneNumber: frm.value.phone};
-      console.log(otpRequest);
-        this.http.post(`${this.baseUrl}/phone`,otpRequest).subscribe(
-          (response:any)=>{
-            console.log('OTP Verification Response:', response);
-            console.log(response.customer_id);
-            localStorage.setItem("userData",response.customer_id);
-          }
-        )
+//       const otpRequest: OtpRequest = { 
+//         username: this.phoneNumber,
+//         phoneNumber: frm.value.phone};
+//       console.log(otpRequest);
+//         this.http.post(`${this.baseUrl}/phone`,otpRequest).subscribe(
+//           (response:any)=>{
+//             console.log('OTP Verification Response:', response);
+//             console.log(response.id);
+//             localStorage.setItem("userData",response.id);
+//           }
+//         )
   
-      // // Call the sendOtp service method
+//       // // Call the sendOtp service method
+//       this.ds.sendOtp(otpRequest).subscribe(
+
+//         (data: any) => {
+//           // console.log('OTP Verification Response:', data.Customer_id);
+//           // localStorage.setItem("userData",data.Customer_id);
+
+//           console.log('OTP Sent:',data);
+//         this.ds.otp = data.otp;
+//         console.log(this.ds.otp)
+//         this.router.navigate(['/otp']);
+//         this.otpSent=true;
+//       });
+// }
+
+generateOTP(frm: any) {
+  // Extract the phone number from the form
+  console.log(frm.value.phone);
+
+  const otpRequest: OtpRequest = {
+    username: this.phoneNumber,
+    phoneNumber: frm.value.phone
+  };
+  console.log(otpRequest);
+
+  this.http.post(`${this.baseUrl}/phone`, otpRequest).subscribe(
+    (response: any) => {
+      console.log('OTP Verification Response:', response);
+      console.log(response[0].id);
+      localStorage.setItem("userData", response[0].id);
+
+      // Call the sendOtp service method inside the success callback
       this.ds.sendOtp(otpRequest).subscribe(
-
         (data: any) => {
-          // console.log('OTP Verification Response:', data.Customer_id);
-          // localStorage.setItem("userData",data.Customer_id);
-
-          console.log('OTP Sent:',data);
-        this.ds.otp = data.otp;
-        console.log(this.ds.otp)
-        this.router.navigate(['/otp']);
-        this.otpSent=true;
-      });
+          console.log('OTP Sent:', data);
+          this.ds.otp = data.otp;
+          console.log(this.ds.otp);
+          this.router.navigate(['/otp']);
+          this.otpSent = true;
+        }
+      );
+    },
+    (error: any) => {
+      console.error('Error in /phone endpoint:', error);
+      // Handle error, if needed
+    }
+  );
 }
-
-
 }

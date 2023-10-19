@@ -1,8 +1,6 @@
-<!-- <p>adminviewpage works!</p> -->
-
+<div class="cust_area1">
 <body class="sub_page">
     <div class="hero_area">
-      
       <!-- header section strats -->
       <header class="header_section">
         <div class="container">
@@ -10,7 +8,7 @@
             <a class="navbar-brand mr-5" href="index.html">
               <img src="../assets/images/pay3.png" alt="">
               <span style="color: red;">
-               Propay
+                Propay
               </span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -44,65 +42,27 @@
             </div>
           </nav>
         </div>
-      </header></div>
+      </header>
       <!-- end header section -->
-    
+      
+    </div>
+</body><br><br>
+<div class="contain" >
+    <form action="" class="was-validated" #frm="ngForm"> 
+    <label for="payeeName">Payee Name:</label>
+    <input type="text" id="payeeName" name="payeeName" required><br>
 
-<br><br>
+    <label for="upiID">UPI ID:</label>
+    <input type="text" id="upiID" ngModel #upiID="ngModel" name="upiID" placeholder="Enter UPI ID (e.g., yourname@bankname)" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+  <div *ngIf="upiID.touched">
+    <div *ngIf="upiID.invalid">
+      <small class="text-danger" *ngIf="upiID.errors?.['required']">UPI ID cannot be empty</small>
+      <small class="text-danger" *ngIf="upiID.errors?.['pattern']">Enter a valid UPI ID (e.g., yourname@bankname)</small>
+    </div><br>
+<br>
+   
 
-
-<h4>Customer Details</h4>
-<table  class="center" border="4px">
-<thead>
-    <th>id</th>
-    <th>Name</th>
-    <th>phone</th>
-    <th>email</th>
-    <th>duedate</th>
-    <th>status</th>
-    <th>previousbalance</th>
-    <th>currentbalance</th>
-    <th>outstandingbalance</th>
-    
-    
-</thead>
-<tbody>
-   <tr *ngFor  ="let customer of customers">
-<td>{{customer.customer_id}}</td>
-<td>{{customer.name}}</td>
-<td>{{customer.mobile}}</td>
-<td>{{customer.email}}</td>
-<td>{{customer.duedate}}</td>
-<td>{{customer.status}}</td>
-<td>{{customer.previousbalance}}</td>
-<td>{{customer.currentbalance}}</td>
-<td>{{customer.outbalance}}</td>
-
-<!-- <td>{{customer.previousbalance}}</td> -->
-
-</tr>
-<!-- <tr>
-    <td>1</td>
-<td>Kavi</td>
-<td>9344738292</td>
-<td>kavi12@gmail.com</td>
-<td>10/11/2023</td>
-<td>555</td>
-<td>paid</td>
-</tr>
-<tr>
-    <td>2</td>
-    <td>priya</td>
-    <td>9344738292</td>
-    <td>kavi12@gmail.com</td>
-    <td>10/11/2023</td>
-    <td>555</td>
-    <td>unpaid</td>
-    </tr> -->
-</tbody>
-
-
-
-
-</table>
-</body>
+    <button type="submit" routerLink="/paymentsucces" (click)="onSubmit()" >Make Payment</button>
+  </div>    
+</form>
+</div></div>

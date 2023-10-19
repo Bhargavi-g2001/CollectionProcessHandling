@@ -186,7 +186,7 @@ body {
 
     color: #333;
 
-    background-color:red; /* input field colors*/
+    background-color:gray; /* input field colors*/
 
     border-radius: 2px 0 0 2px;
 
@@ -294,7 +294,7 @@ body {
 
 .radio:checked+label {
 
-    background-color:red; /* male femle button color*/
+    background-color:gray; /* male femle button color*/
 
     color: #fff;
 
@@ -308,7 +308,7 @@ body {
 
     width: 100%;
 
-    background-color:red; /* for payment now button*/
+    background-color:rgb(77, 75, 75); /* for payment now button*/
 
     border: none;
 

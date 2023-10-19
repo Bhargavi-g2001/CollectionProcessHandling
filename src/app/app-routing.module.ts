@@ -12,6 +12,12 @@ import { CustomerSupportviewpageComponent } from './customer-supportviewpage/cus
 import { PaymentoptionsComponent } from './paymentoptions/paymentoptions.component';
 import { OtpComponent } from './otp/otp.component';
 import { EmailComponent } from './email/email.component';
+import { PaymentsuccessComponent } from './paymentsuccess/paymentsuccess.component';
+import { PaymentupiComponent } from './paymentupi/paymentupi.component';
+import { OtherissuesComponent } from './otherissues/otherissues.component';
+import { PayinstallementComponent } from './payinstallement/payinstallement.component';
+import { Paymentoptions1Component } from './paymentoptions1/paymentoptions1.component';
+import { Customer1Component } from './customer1/customer1.component';
 
 const routes: Routes = [
                     {
@@ -44,6 +50,31 @@ const routes: Routes = [
                         path:'email',
                         component:EmailComponent
                       },
+                      {
+                        path:'paymentsucces',
+                        component:PaymentsuccessComponent
+                      },
+                      {
+                        path:'paymentupi',
+                        component:PaymentupiComponent
+                      },
+                      {
+                        path:'otherissues',
+                        component:OtherissuesComponent
+                      },
+                      {
+                        path:'paymentinstallment',
+                        component:PayinstallementComponent
+                      },
+                      {
+                        path:'paymentoptions1',
+                        component:Paymentoptions1Component
+                      },
+                      {
+                        path:'customer1',
+                        component:Customer1Component
+                      },
+
                        
                     
 

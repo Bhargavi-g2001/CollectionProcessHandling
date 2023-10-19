@@ -38,8 +38,11 @@ export class OtpComponent {
     this.o = this.otpForm.value.otp1+this.otpForm.value.otp2+this.otpForm.value.otp3+this.otpForm.value.otp4+this.otpForm.value.otp5+this.otpForm.value.otp6
     console.log("otppppp "+this.o)
     console.log("otttpppp 2 "+this.ds.otp)
-    if(this.o == this.ds.otp){
+    if(this.o == this.ds.otp && this.ds.otp1==false){
       this.router.navigate(['/paymentoptions']);
+    }
+    else if(this.o == this.ds.otp && this.ds.otp1==true){
+      this.router.navigate(['/paymentoptions1']);
     }
     else{
       //console.error("invalid otp",console.error)

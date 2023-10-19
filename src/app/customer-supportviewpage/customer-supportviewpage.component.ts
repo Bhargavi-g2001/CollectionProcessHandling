@@ -30,7 +30,7 @@ export class CustomerSupportviewpageComponent {
 
   //for email sending..........
   sendEmail(customer:pendingcustomer) :void{
-    this.billingService.sendEmail(customer.customer_id).subscribe(
+    this.billingService.sendEmail(customer.id).subscribe(
       (response: any) => {
         console.log(response);
         // You can handle a success message or action here

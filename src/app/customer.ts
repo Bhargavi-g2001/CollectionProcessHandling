@@ -4,6 +4,10 @@ export class customer{
 	  mobile:string|undefined;
 	 email:string|undefined;
 	 duedate:Date|undefined;
-	 outbalance:number|undefined;
+	 
 	status:string|undefined;
+	outbalance:number|undefined;
+	previousbalance:number|undefined;
+	currentbalance:number|undefined;
+
 }

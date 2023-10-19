@@ -9,6 +9,10 @@ import { OtpRequest } from '../OtpRequest';
   providedIn: 'root'
 })
 export class BillingserviceService {
+  billamount:number=0;
+  otp1:boolean=false;
+  pay:boolean=false;
+  money:number=0
   post(arg0: string, otpRequest: OtpRequest) {
     throw new Error('Method not implemented.');
   }
@@ -69,6 +73,7 @@ sendEmail(customerId: number) {
   return this.http.post(`${this.apiUrl}/email/${customerId}`,null);
 }
 
+
 private Url3 = 'http://localhost:1219';
 phone(otpRequest:any): Observable<any> {
 
@@ -80,11 +85,27 @@ paydetailsbill(customer: any): Observable<any> {
 
  
 
-  return this.http.post('${this.baseUrl}login', customer);
+  return this.http.post('${this.baseUrl}/paydetailsbill', customer);
 
 
 
 }
+
+
+
+delete(customer: any): Observable<any> {
+ return this.http.post('${this.baseUrl}delete', customer);
+
+}
 }
 
+// admin(response: any): Observable<any> {
+//   return this.http.post('${this.baseUrl}admin', response);
+// }
 
+
+
+// update(response1: any): Observable<any> {
+//   return this.http.post('${this.baseUrl}update', response1);
+// }
+// }
